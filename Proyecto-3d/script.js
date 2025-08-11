@@ -42,11 +42,11 @@ mtlLoader.load('16837_eye_v2_NEW.mtl', (materials) => {
     let dist = (size / 2) / Math.tan(fov / 2);
     dist *= fitOffset;
 
-    camera.position.copy(center.clone().add(new THREE.Vector3(0, 0, dist)));
+    camera.position.set(0, 0, dist);
     camera.near = dist / 100;
     camera.far = dist * 100;
     camera.updateProjectionMatrix();
-    controls.target.copy(center);
+    controls.target.set(0, 0, 0);
     controls.update();
   });
 });
